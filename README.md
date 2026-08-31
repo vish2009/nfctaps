@@ -6,12 +6,11 @@ Files:
 - index.html — main page
 - css/styles.css — styles
 - js/app.js — lightweight interactions (no data storage)
-- assets/logo.svg — logo placeholder
+- assets/official_logo.png — official logo
+- assets/banner.png — campaign banner
 - CNAME — custom domain for GitHub Pages
 
 Important placeholders you must replace before publishing:
-- [PHONE] — Replace everywhere with your phone number in international format without the leading plus sign. Example for India: 919876543210
-- [INSTAGRAM] — Replace with your Instagram username (no @) or full URL
 - [PRICE], [PRICE_RANGE] — set your pricing values in index.html or via CSS/HTML edits
 
 How this site handles orders:
