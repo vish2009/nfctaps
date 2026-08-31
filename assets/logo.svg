@@ -1,0 +1,6 @@
+<!-- Minimal SVG text logo. Replace with your designed SVG if available. -->
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="40" viewBox="0 0 120 40" role="img" aria-label="NFCTaps logo">
+  <rect width="120" height="40" rx="8" fill="#0f172a"/>
+  <text x="14" y="26" font-family="Inter, Arial" font-weight="700" font-size="16" fill="#d4af37">NFCTaps</text>
+  <text x="82" y="26" font-family="Inter, Arial" font-weight="700" font-size="16" fill="#ffffff">.in</text>
+</svg>
