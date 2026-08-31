@@ -159,6 +159,14 @@ input::placeholder{color:var(--muted)}
 /* FOOTER */
 .footer{border-top:1px solid rgba(255,255,255,0.03);padding:18px 0;margin-top:40px}
 .footer-grid{display:grid;gap:18px;grid-template-columns:1fr;align-items:start}
+.footer-contact-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+.footer-contact-link{display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:50%;color:#fff;text-decoration:none;transition:transform .2s,box-shadow .2s}
+.footer-contact-link svg{width:21px;height:21px;fill:currentColor}
+.footer-contact-link:hover{transform:translateY(-2px)}
+.whatsapp-link{background:#25D366;color:#fff}
+.whatsapp-link:hover{box-shadow:0 8px 20px rgba(37,211,102,0.25)}
+.instagram-link{border:1px solid rgba(212,175,55,0.7);color:var(--gold)}
+.instagram-link:hover{background:rgba(212,175,55,0.12);box-shadow:0 8px 20px rgba(212,175,55,0.12)}
 
 /* Toast */
 .toast{background:rgba(2,132,199,0.12);border-left:4px solid var(--cyan);padding:12px;border-radius:8px;margin-top:12px}
