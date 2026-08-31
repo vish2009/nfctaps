@@ -15,7 +15,7 @@
 }
 
 *{box-sizing:border-box}
-html,body{height:100%}
+html,body{min-height:100%}
 body{
   margin:0;
   background:linear-gradient(180deg,var(--bg) 0%, #071029 100%);
@@ -33,7 +33,7 @@ body{
 }
 
 /* Background decorative blobs */
-.bg-blobs{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none}
+.bg-blobs{display:none}
 .blob{position:absolute;border-radius:50%;filter:blur(70px);opacity:0.35;animation:blob-float 18s ease-in-out infinite}
 .blob-a{width:420px;height:420px;background:radial-gradient(circle,var(--cyan),transparent 70%);top:-120px;left:-100px;animation-duration:22s}
 .blob-b{width:380px;height:380px;background:radial-gradient(circle,var(--gold),transparent 70%);top:20%;right:-140px;animation-duration:26s;animation-delay:-6s}
@@ -175,7 +175,7 @@ input::placeholder{color:var(--muted)}
   .nav-list{display:flex}
   .hero-grid{grid-template-columns:1fr 420px}
   .how-it-works .steps-grid{grid-template-columns:repeat(3,1fr)}
-  .features-grid{grid-template-columns:repeat(2,1fr)}
+  .features-grid{grid-template-columns:repeat(3,1fr)}
   .stats-grid{grid-template-columns:repeat(4,1fr)}
   .testimonial-grid{grid-template-columns:repeat(3,1fr)}
   .pricing-grid{grid-template-columns:repeat(3,1fr)}
