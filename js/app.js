@@ -72,8 +72,7 @@ document.addEventListener('DOMContentLoaded', function () {
         return;
       }
 
-      // Replace [PHONE] in the base phone string here (owner's phone).
-      var ownerPhone = '[PHONE]'; // REPLACE with your phone without '+' (e.g., 919876543210)
+      var ownerPhone = '917620952720';
       var message =
 `Hi NFCTaps,
 
@@ -103,6 +102,51 @@ Please confirm price and delivery.`;
     }, 5000);
   }
 
-  // Ensure contact CTAs use owner phone placeholder
-  // (Optional: update any dynamic CTAs here if needed)
+  // Scroll-reveal animations
+  var revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window && revealEls.length) {
+    var revealObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+    revealEls.forEach(function (el) { revealObserver.observe(el); });
+  } else {
+    revealEls.forEach(function (el) { el.classList.add('visible'); });
+  }
+
+  // Animated stat counters
+  var statEls = document.querySelectorAll('.stat-number');
+  if (statEls.length) {
+    var animateCount = function (el) {
+      var target = parseFloat(el.getAttribute('data-target'));
+      var decimals = parseInt(el.getAttribute('data-decimal') || '0', 10);
+      var duration = 1400;
+      var start = performance.now();
+      function step(now) {
+        var progress = Math.min((now - start) / duration, 1);
+        var eased = 1 - Math.pow(1 - progress, 3);
+        var value = target * eased;
+        el.textContent = decimals ? value.toFixed(decimals) : Math.round(value).toLocaleString('en-IN');
+        if (progress < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    };
+    if ('IntersectionObserver' in window) {
+      var statObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            animateCount(entry.target);
+            statObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.4 });
+      statEls.forEach(function (el) { statObserver.observe(el); });
+    } else {
+      statEls.forEach(animateCount);
+    }
+  }
 });
